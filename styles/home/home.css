@@ -1,0 +1,157 @@
+.home{
+
+    width: 100%;
+    height: 700px;
+    position: relative;
+    overflow: hidden;
+}
+.aprops{
+
+    width: 100%;
+    height: 700px;
+    position: relative;
+    overflow: hidden;
+}
+.home-all{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.home-left {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  background-color: var(--home_bg);
+ 
+
+}
+.home-left .text{
+    
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.home-left h1{
+font-size: 35px;
+text-align: center;
+color: var(--home_title_color);
+font-family: inika_bold;
+}
+.home-left p{
+    
+    text-align: center;
+    color: var(--home_text_color);
+    font-family: inika_reg;
+    }
+.home-right{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--home_bg);
+
+}
+.home-right .image{
+ 
+    width: 500px;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+border-radius: 50%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  filter: blur(0px);
+
+}
+@keyframes image_blur{
+    from {width: 102%;height: 102%;}
+    to {width: 100% ; height: 100%;}
+  }
+.home-right .image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(215, 184, 113)); /* Adjust the gradient and color to your desired effect */
+    filter: blur(5px); /* Adjust the blur radius to your desired effect */
+    border-radius: 50%;
+    animation-name: image_blur;
+    animation-duration: 1s;
+  }
+
+  
+  @media screen and (max-width: 1100px) {
+    
+  }
+
+  @media screen and (max-width:750px) {
+    .aprops{
+        height: 100%;
+    }
+    .home-all{
+        flex-direction: column-reverse;
+        height: 100%;
+        justify-content: center;
+     }
+     .home-left {
+       
+         width: 100%;
+         height: 70%;
+         justify-content: flex-start;
+         align-items: center;
+        
+     }
+     .home-left h1{
+        font-size:25px;
+      
+        }
+        .home-left p{
+            font-size:16px;
+           
+            }
+     .home-left .text{
+     
+         display: flex;
+         flex-direction: column;
+         width: 80%;
+         height: 100%;
+         justify-content: center;
+         align-items: center;
+     
+     
+     }
+     .home-right {
+       
+         width: 100%;
+         height: 30%;
+        
+        
+     }
+     .home-right .image{
+  
+         width:200px;
+         height: 200px;
+       
+     
+     }
+  }
+  
+  
+  @media screen and (max-width:450px) {
+ 
+  }

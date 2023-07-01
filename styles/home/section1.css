@@ -1,0 +1,156 @@
+.home{
+
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.home-section1{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 800px;
+    
+
+    object-fit: cover;
+    background-size: cover;
+    background-position: center center;
+}
+.timer{
+  position: absolute;
+  background-color: red;
+  top: 0%;
+  width: 100%;
+  height: 25px;
+  z-index: 10;
+}
+.slider1-item2 {
+  position: absolute;
+  z-index: 0;
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+ 
+
+
+}
+.home-section2{
+  display: flex;
+ position: absolute;
+  
+  width: 100%;
+  height: 800px;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+
+ 
+}
+.bb{
+  display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    margin: 5px;
+    align-items: center;
+    background-color:red;
+    width: 30%;
+    height: 300px;
+    background-image: url("/pse/public/static/images/leger.png");
+    object-fit: contain;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px 0px rgb(57, 87, 2);
+    transform: translateX(-00%);
+    color: var(--mession-font-color);
+
+    border: none;
+    
+}
+.home-section1 button {
+    position: absolute;
+    margin-top: 200px;
+    z-index: 60;
+}
+.home-slider1{
+  position: relative;
+    position:absolute;
+   display: flex;
+
+ 
+ 
+   
+
+}
+
+.home-slider1 .inside{
+
+ display: flex;
+
+   width: 1050px;
+    height: 200px;
+  
+
+}
+.slider1-items {
+    position: absolute;
+    display: flex;
+   
+
+
+  
+  }
+  
+  .slider1-item {
+    position: absolute;
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    box-shadow: 0px 4px 15px 0px black;
+    border-radius: 5%;
+
+  }
+  .slider1-item3 {
+    position: absolute;
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    box-shadow: 0px 4px 15px 0px black;
+    border-radius: 5%;
+
+  }
+  .slider1-item:nth-child(1) {
+    left: 0; /* Définir la position du premier élément */
+  }
+  
+  .slider1-item:nth-child(2) {
+    left: 155px; /* Définir la position du deuxième élément */
+  }
+  
+  .slider1-item:nth-child(3) {
+    left: 310px; /* Définir la position du troisième élément */
+  }
+  .slider1-item:nth-child(4) {
+    left: 465px; /* Définir la position du troisième élément */
+  }
+  .slider1-item:nth-child(5) {
+    left: 620px; /* Définir la position du troisième élément */
+  }
+  .slider1-item:nth-child(6) {
+    left: 775px; /* Définir la position du troisième élément */
+  }
+
+ 

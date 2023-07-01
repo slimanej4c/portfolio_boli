@@ -1,0 +1,153 @@
+.competence-page{
+    width: 100%;
+   
+    position: relative;
+
+    background-color: var(--home_bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.competence-page .big-title{
+
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.competence-page .big-title h1{
+
+    font-size: 35px;
+text-align: center;
+color: var(--home_title_color);
+font-family: inika_bold;
+}
+.all-competence {
+  height: 70%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  
+}
+.all-competence .competence{
+    background-color: var(--competence_bg_color);
+   width: 70%;
+    display: flex;
+   margin-bottom: 10px;
+   align-items: center;
+   justify-content: center;
+
+
+}
+.all-competence .title{
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   border-radius: 50%;
+   background-color: var(--competence_progress_color);
+  
+ 
+}
+.all-competence .sous-title{
+    display: flex;
+    width:110px;
+    height: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+     background-color: var(  --competence_title_bg_color);
+  
+ 
+}
+.all-competence .title h1{
+    font-size: 22px;
+    text-align: center;
+    color: var(--competence_title_color);
+    font-family: inika_bold;
+    
+}
+.all-competence .description{
+   display: flex;
+   width: 80%;
+   height: 200px;
+
+
+}
+.all-competence .description p{
+    margin-left: 5%;
+    font-size: 18px;
+    text-align: center;
+    color:  var(--competence_description_color);
+    font-family: inika_reg;
+}
+
+
+@media screen and (max-width: 1100px) {
+   
+  }
+
+  @media screen and (max-width:750px) {
+    .competence-page .big-title{
+
+    
+        height: 100px;
+     
+    }
+    .competence-page .big-title h1{
+    
+        font-size: 25px;
+   
+    }
+    .all-competence .competence{
+       width: 100%;
+    flex-direction: column;
+    margin-bottom: 20px;
+    
+    }
+    .all-competence .title{
+        width: 90px;
+        height: 90px;
+     
+      
+     
+    }
+    .all-competence .sous-title{
+   
+        width:80px;
+        height: 80px;
+    
+     
+    }
+    .all-competence .title h1{
+        font-size: 16px;
+     
+        
+    }
+    .all-competence .description{
+    
+        width: 90%;
+        height:100%;
+     
+     
+     }
+     .all-competence .description p{
+
+        font-size: 14px;
+     
+   
+    }
+    
+  }
+  
+  
+  @media screen and (max-width:450px) {
+ 
+  }
