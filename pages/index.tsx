@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
-import Section1 from '../components/home/section1'
+
 import { motion } from 'framer-motion';
 import React, { useState } from "react";
 import Layout from '../hocs/Layout'
@@ -34,7 +34,7 @@ export default function Home() {
     initial: { opacity: 0, rotate: 0 },
     animate: { opacity: 1, rotate: 360 },
   };
-  const handleMouseMove = (event) => {
+  function handleMouseMove  (event:any)  {
     const { clientX, clientY } = event;
     const { left, top, width, height } = event.target.getBoundingClientRect();
 
