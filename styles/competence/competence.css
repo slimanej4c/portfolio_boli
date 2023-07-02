@@ -78,6 +78,8 @@ font-family: inika_bold;
    display: flex;
    width: 80%;
    height: 200px;
+   justify-content: center;
+    align-items: center;
 
 
 }

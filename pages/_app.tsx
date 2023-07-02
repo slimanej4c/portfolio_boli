@@ -5,6 +5,7 @@ import '../styles/Layout.css'
 import '../styles/home/section1.css'
 import '../styles/home/home.css'
 import '../styles/competence/competence.css'
+import '../styles/project/project.css'
  const App =({ Component, pageProps }: AppProps) =>{
   return (
     <>
