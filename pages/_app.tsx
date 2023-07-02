@@ -13,6 +13,7 @@ import '../styles/project/project.css'
        
     <title>PSE</title>
     <meta name='viewport' content='width=device-width, inital-scale=1' />
+    <meta name="theme-color" content="black"></meta>
   </Head>
 
   <Component {...pageProps} />
