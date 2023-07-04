@@ -1,24 +1,30 @@
 import React,  { useState, useEffect } from "react";
 import Layout from '../hocs/Layout'
 import { motion, AnimatePresence , useAnimation} from "framer-motion"
+
+import { connect } from 'react-redux'
 import { useInView } from 'react-intersection-observer';
-function competence() {
+function competence(props) {
   const contenu = [
     {
-      FR: [
-      
+      fr: [
         {
           id: 1,
-     
-         title: "les competence",
+          title: "Les compétences que je maîtrise",
         },
-      
+      ],
+      eng: [
+        {
+          id: 1,
+          title: "Skills I possess",
+        },
       ],
     },
   ];
+  
   const competences = [
     {
-      FR: [
+      fr: [
         {
           id: 1,
           percentage: 10,
@@ -50,8 +56,41 @@ function competence() {
           description: "MySQL est un système de gestion de base de données relationnelle très populaire. Il permet de stocker et de récupérer des données de manière efficace. Par exemple, je peux utiliser MySQL pour concevoir et gérer la base de données d'une application de gestion des stocks pour une entreprise de commerce électronique.",
         },
       ],
+      eng: [
+        {
+          id: 1,
+          percentage: 10,
+          name: "Next JS",
+          description: "Next JS is a JavaScript framework used to create fast and performant web applications. It allows for server-side and client-side application development using React and Node.js. For example, I can use Next JS to build an e-commerce application with advanced server-side rendering features.",
+        },
+        {
+          id: 2,
+          percentage: 10,
+          name: "React JS",
+          description: "React JS is a popular JavaScript library used to build interactive user interfaces. With React JS, I can create reusable components and build responsive web applications. For example, I can use React JS to develop a task management application with drag-and-drop functionality.",
+        },
+        {
+          id: 3,
+          percentage: 20,
+          name: "React Native JS",
+          description: "React Native JS is a JavaScript framework for developing mobile applications for iOS and Android. It uses the same codebase to create cross-platform applications. For example, I can use React Native JS to develop a food delivery application with a native user experience on both platforms.",
+        },
+        {
+          id: 4,
+          percentage: 5,
+          name: "Python",
+          description: "Python is a versatile programming language used for web development, desktop applications, scripting, and more. It is known for its clear and concise syntax and extensive standard library. For example, I can use Python to create a personalized recommendation system for a video streaming platform.",
+        },
+        {
+          id: 5,
+          percentage: 5,
+          name: "MySQL",
+          description: "MySQL is a highly popular relational database management system. It allows for efficient data storage and retrieval. For example, I can use MySQL to design and manage the database for a stock management application for an e-commerce company.",
+        },
+      ],
     },
   ];
+  
   const titleVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -83,11 +122,11 @@ function competence() {
 
     const intervalId = setInterval(() => {
 
-      if (currentIndex=== competences[0]['FR'].length) {
+      if (currentIndex=== competences[0][props.langue].length) {
         clearInterval(intervalId);
       }
       else{
-        setDisplayedItems((prevItems) => [...prevItems, competences[0]['FR'][currentIndex]]);
+        setDisplayedItems((prevItems) => [...prevItems, competences[0][props.langue][currentIndex]]);
         setCurrentIndex((prevIndex) => prevIndex + 1);
 
       }
@@ -145,7 +184,7 @@ function competence() {
           <div className='big-title'>
 
           <motion.h1 variants={titleVariants} initial="hidden" whileInView="visible" >
-                        {contenu[0]["FR"][0].title.split("").map((letter) => (
+                        {contenu[0][props.langue][0].title.split("").map((letter) => (
                       <motion.span key={1} variants={letterVariants}>{letter}</motion.span>
                     ))}
                           
@@ -165,4 +204,27 @@ function competence() {
   )
 }
 
-export default competence
+
+
+const mapStateToProps = (state) => ({
+ 
+  langue:state.change_langue_reducer.langue,
+
+
+})
+
+const mapDispatchToProps = dispatch =>{
+return{
+  Set_langue_redux:(lang)=>dispatch(Set_langue_redux(lang)),
+
+}
+
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)( competence)
+
+
+
+
+
+

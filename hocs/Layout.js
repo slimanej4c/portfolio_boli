@@ -3,7 +3,9 @@
 import React, {useState,useEffect} from 'react'
 import Link from 'next/link'
 
+import { Set_langue_redux } from '../Redux'
 
+import { connect } from 'react-redux'
 import { motion } from "framer-motion";
 
 import { useRouter } from 'next/router';
@@ -18,11 +20,23 @@ const [nav_opened, setnav_opened] = useState("layout-nav");
 const [per, setper] = useState(false);
 const [show_model, setshow_model] = useState(true);
 const [clickedd, setClickedd] = useState(false);
-const [To_link, setTo_link] = useState(2000);
+
 const [showNav, setShowNav] = useState(true);
+const [getlang, setgetlang] = useState("");
+const [isChecked, setisChecked] = useState(props.langue==='fr'? null : true);
+const [to_route, settoroute] = useState(true);
+
+const [To_link, setTo_link] = useState("fr");
 const routerr = useRouter();
-const currentPath = routerr.pathname;
-const lastWord = "/"+currentPath.split('/').slice(-1)[0];
+
+const  lang  = routerr.asPath;
+const lastWord = lang.split('=').slice(-1)[0];
+const firstWord = lang.split('=').slice(0)[0]+"=";
+
+
+
+
+
 useEffect(() => {
 
  
@@ -30,14 +44,67 @@ useEffect(() => {
 // Délai de 2 secondes avant d'afficher le composant de navigation
 }, []);
 
+useEffect(() => {
 
-  function handleClick() {
-    setClickedd(!clickedd);
+
+
+// Délai de 2 secondes avant d'afficher le composant de navigation
+}, [props.langue]);
+useEffect(() => {
+  const  lang  = routerr.asPath;
+const lastWord = lang.split('=').slice(-1)[0];
+const firstWord = lang.split('=').slice(0)[0]+"=";
+  if (lastWord === "fr") {
+    
+ 
+    if (props.langue!== "fr") {
+   
+      props.Set_langue_redux("fr")
+     
+      
+    }
   }
+  
+  if (lastWord === "eng") {
+    console.log('lang...egal eng.',props.langue,lang ,"laseword:",lastWord,clickedd,"chk",isChecked)
+  
+
+    
+    if (props.langue!== "eng") {
+   
+      props.Set_langue_redux("eng")
+     
+    }
+  }
+  console.log('lang..........',props.langue,lang ,"laseword:",lastWord , firstWord,clickedd ,"chk",isChecked ,props.langue )
+  
+     
+  }, [clickedd ]);
+
+  async function handleClick() {
+    const lang = routerr.asPath;
+    const lastWord = lang.split('=').slice(-1)[0];
+    const firstWord = lang.split('=').slice(0)[0] 
+    const firstword=firstWord.split('?').slice(0)[0]
+  
+    if (lastWord === "fr") {
+      await routerr.push(firstword +"?lang=eng");
+     
+
+      
+      setClickedd(!clickedd);
+    } else {
+      await routerr.push(firstword +"?lang=fr");
+   
+      
+      setClickedd(!clickedd);
+    }
+  }
+  
 
 
-
-
+   
+    // ...
 
 
 
@@ -141,20 +208,21 @@ const MenuIcon = () => {
 
 const link_array = [
     {
-      FR: [
-        { id: 1, title: 'Accueil', to: '/' },
-        { id: 2, title: 'À propos', to: '/apropos' },
-        { id: 3, title: 'Compétence', to: '/competence' },
-        { id: 4, title: 'Projets', to: '/projets' }
+      "fr": [
+        { id: 1, title: 'Accueil', to: `/?lang=fr`},
+        { id: 2, title: 'À propos', to: `/apropos?lang=fr`},
+        { id: 3, title: 'Compétence', to:  `/competence?lang=fr`},
+        { id: 4, title: 'Projets', to: `/projets?lang=fr` }
       ],
-      ENG: [
-        { id: 1, title: 'Home', to: '/' },
-        { id: 2, title: 'About', to: '/apropos' },
-        { id: 3, title: 'Skills', to: '/competence' },
-        { id: 4, title: 'Projects', to: '/projets' }
+      "eng": [
+        { id: 1, title: 'Home', to: '/?lang=eng' },
+        { id: 2, title: 'About', to: '/apropos?lang=eng' },
+        { id: 3, title: 'Skills', to: '/competence?lang=eng' },
+        { id: 4, title: 'Projects', to: '/projets?lang=eng' }
       ]
     }
   ];
+
 const Nav=()=>{
   const contact_div="item-div contact"
   const other_div="item-div"
@@ -168,8 +236,13 @@ const Nav=()=>{
                 initial="hidden"
                 animate="visible"
               >
-               
-                    {link_array[0].FR.map((item) => (
+                 <input
+        className="switch"
+        type="checkbox"
+        checked={props.langue==="fr" ? false : true}
+        onClick={()=>handleClick()}
+      />
+                    { link_array[0][ props.langue].map((item) => (
             <motion.li
               key={item.id}
               variants={itemVariants}
@@ -177,13 +250,13 @@ const Nav=()=>{
             >
               <Link className={item.to ===lastWord  ? "nav-link clicked"  : "nav-link"} 
           
-              href={item.to} onClick={() => clicked(item.to)}>
-                {item.title}
+              href={item.to} onClick={() => clicked(item.to)} >
+                {item.title}{getlang}
               
          
               </Link>
             </motion.li>
-          ))}
+          )) }
               </motion.ul>
       
       </nav>
@@ -259,7 +332,23 @@ const texts_model = {
 
 
 
-export default Layout
+
+const mapStateToProps = (state) => ({
+ 
+  langue:state.change_langue_reducer.langue,
+
+
+})
+
+const mapDispatchToProps = dispatch =>{
+return{
+  Set_langue_redux:(lang)=>dispatch(Set_langue_redux(lang)),
+
+}
+
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)( Layout)
 
 
 

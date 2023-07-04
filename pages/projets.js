@@ -2,10 +2,11 @@ import React from 'react'
 import Layout from '../hocs/Layout'
 import { motion, AnimatePresence , useAnimation} from "framer-motion"
 import { useInView } from 'react-intersection-observer';
-function projets() {
+import { connect } from 'react-redux'
+function projets(props) {
   const projects = [
     {
-      FR: [
+      fr: [
         {
           id: 1,
           image: '',
@@ -42,8 +43,44 @@ function projets() {
           name: "Application de bureau pour la génération de rapports automatiques avec Python",
           description: "Une application de bureau développée avec Python pour la génération de rapports automatiques à partir de fichiers Excel. J'ai utilisé des bibliothèques telles que pandas et openpyxl pour lire les données à partir de fichiers Excel, les analyser et générer des rapports automatiquement. Par exemple, j'ai développé une application de génération de rapports pour une entreprise.",
         },
-   
-         
+      ],
+      eng: [
+        {
+          id: 1,
+          image: '',
+          name: "Website with Next.js and Redux",
+          description: "A website created with Next.js and Redux. Next.js is a JavaScript framework used to develop server-side web applications. Redux is a state management library that facilitates data management in a React application. For example, I used Next.js and Redux to create a showcase website for an association.",
+        },
+        {
+          id: 2,
+          image: '',
+          name: "Mobile application with React Native, Redux, and Firebase",
+          description: "A mobile application developed with React Native, Redux, and Firebase. React Native is a JavaScript framework used to create cross-platform mobile applications. Redux is used to manage the application state, and Firebase is an application development platform that provides services such as authentication, real-time database, etc. For example, I developed a language learning application with challenge features using these technologies.",
+        },
+        {
+          id: 3,
+          image: '',
+          name: "Desktop application with Python and Selenium",
+          description: "A desktop application created with Python and Selenium. Python is a versatile programming language used for desktop application development. Selenium is a library that enables web testing automation. I used these technologies to create a desktop application with a graphical interface for automated MMS sending and response analysis.",
+        },
+        {
+          id: 4,
+          image: '',
+          name: "Data classification scripts with Python",
+          description: "Data classification scripts developed with Python and artificial intelligence libraries such as scikit-learn and TensorFlow. I used these scripts to perform classification tasks on datasets using machine learning algorithms. For example, I developed a sentiment classification script based on text analysis.",
+        },
+        {
+          id: 5,
+          image: '',
+          name: "Data Scraping from a Website with Python",
+          description: "Data scraping from a website using Python. I used libraries such as BeautifulSoup to extract data from a web page and store it in a structured format. For example, I developed a script to retrieve product information from an e-commerce website.",
+        },
+        {
+          id: 6,
+          image: '',
+          name: "Desktop Application for Automated Report Generation with Python",
+          description: "A desktop application developed with Python for automated report generation from Excel files. I used libraries such as pandas and openpyxl to read data from Excel files, analyze it, and generate reports automatically. For example, I developed a report generation application for a company.",
+        },
       ],
     },
   ];
@@ -125,24 +162,28 @@ function projets() {
   }
   const contenu = [
     {
-      FR: [
-      
+      fr: [
         {
           id: 1,
-     
-         title: "mes projets ",
+          title: "Découvrez mes réalisations et projets récents",
         },
-      
+      ],
+      eng: [
+        {
+          id: 1,
+          title: "Explore My Achievements and Recent Projects",
+        },
       ],
     },
   ];
+  
   return (
     <Layout>
     <div className='project-page'>
             <div className='big-title'>
   
         <motion.h1 variants={titleVariants} initial="hidden" whileInView="visible" >
-                        {contenu[0]["FR"][0].title.split("").map((letter ,index) => (
+                        {contenu[0][props.langue][0].title.split("").map((letter ,index) => (
                       <motion.span key={1} variants={letterVariants} transition={{ delay: index * 0.05 }} >{letter}</motion.span>
                     ))}
                           
@@ -153,7 +194,7 @@ function projets() {
         </div>
         <div className='all-project'>
 
-        {projects[0]["FR"].map((item) => (
+        {projects[0][props.langue].map((item) => (
             <ProjectItem key={item.id} item={item} />
           ))}
 
@@ -164,4 +205,25 @@ function projets() {
   )
 }
 
-export default projets
+
+
+
+const mapStateToProps = (state) => ({
+ 
+  langue:state.change_langue_reducer.langue,
+
+
+})
+
+const mapDispatchToProps = dispatch =>{
+return{
+
+
+}
+
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(projets)
+
+
+

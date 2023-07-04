@@ -1,0 +1,1 @@
+export {Set_langue_redux} from './variables'

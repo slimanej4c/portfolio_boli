@@ -2,14 +2,16 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
+import { Set_langue_redux } from '../Redux'
 
+import { connect } from 'react-redux'
 import { motion } from 'framer-motion';
 import React, { useState } from "react";
 import Layout from '../hocs/Layout'
 import { transform } from 'typescript'
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() { 
+ function Home(props) { 
   const [blur, setBlur] = useState(0);
   const getRandomShape = () => {
     // Logique pour générer une forme aléatoire
@@ -18,18 +20,23 @@ export default function Home() {
   };
   const contenu = [
     {
-      FR: [
-      
+      fr: [
         {
           id: 1,
-     
-         title: "Salut, je suis Slimane Benmayouf, spécialisé dans la création de sites web, d'applications mobiles et d'applications desktop.",
+          title: "Salut, je suis Slimane Benmayouf, spécialisé dans la création de sites web, d'applications mobiles et d'applications desktop.",
           text: "Je suis un freelance spécialisé dans le développement de solutions web et mobiles performantes et réactives. Avec une expertise dans Next.js, React.js, Django, React Native et Python, je suis en mesure de créer des expériences utilisateur exceptionnelles pour mes clients.",
         },
-      
+      ],
+      eng: [
+        {
+          id: 1,
+          title: "Hi, I'm Slimane Benmayouf, specialized in creating websites, mobile apps, and desktop apps.",
+          text: "I'm a freelancer specialized in developing high-performance and responsive web and mobile solutions. With expertise in Next.js, React.js, Django, React Native, and Python, I'm able to create exceptional user experiences for my clients.",
+        },
       ],
     },
   ];
+  
   const shapeVariants = {
     initial: { opacity: 0, rotate: 0 },
     animate: { opacity: 1, rotate: 360 },
@@ -102,7 +109,7 @@ export default function Home() {
                     <div  className='home-left'>
                        <div className='text'>
                         <motion.h1 variants={titleVariants} initial="hidden" whileInView="visible" >
-                        {contenu[0]["FR"][0].title.split("").map((letter) => (
+                        {contenu[0][props.langue][0].title.split("").map((letter) => (
                       <motion.span key={1} variants={letterVariants}>{letter}</motion.span>
                     ))}
                           
@@ -114,7 +121,7 @@ export default function Home() {
       whileInView="visible"
       transition={{ duration:3 , delay: 0.5}}> 
       
-      {contenu[0]["FR"][0].text}</motion.p>
+      {contenu[0][props.langue][0].text}</motion.p>
                           
                        </div>
                  
@@ -158,3 +165,26 @@ export default function Home() {
 
   )
 }
+
+
+const mapStateToProps = (state) => ({
+ 
+  langue:state.change_langue_reducer.langue,
+
+
+})
+
+const mapDispatchToProps = dispatch =>{
+return{
+
+
+}
+
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)( Home)
+
+
+
+
+
