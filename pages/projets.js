@@ -9,7 +9,7 @@ function projets(props) {
       fr: [
         {
           id: 1,
-          title: "Logos",
+          title: "Loggos",
           description: "Conception de logos pour les marques et les entreprises.",
           domain: "Design graphique",
         },
