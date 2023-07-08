@@ -54,12 +54,12 @@ font-family: inika_bold;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
+     flex-wrap: wrap;
     
   }
   .all-project .project{
       background-color: var(--competence_bg_color);
-     width: 70%;
+     width: 50%;
       display: flex;
      margin-bottom: 10px;
      align-items: center;
@@ -79,12 +79,14 @@ font-family: inika_bold;
 
 }
 .all-project .image{
-    width: 120px;
-    height: 120px;
+    width: 90%;
+    height:500px;
     display: flex;
     justify-content: center;
     align-items: center;
-   border-radius: 50%;
+    background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
    background-color: var(--competence_progress_color);
 
 
@@ -181,7 +183,19 @@ font-family: inika_bold;
    
  
   }
-  
+  .all-project .image{
+    width: 90%;
+    height:250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+   background-color: var(--competence_progress_color);
+
+
+}
 }
 
 

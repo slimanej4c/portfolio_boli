@@ -1,59 +1,76 @@
-import React from 'react'
+import React, {useState,useEffect} from 'react'
 import Layout from '../hocs/Layout'
+import BrowserFS from 'browserfs/dist/browserfs';
+
+// Optional: You may need to import specific modules from 'browserfs' if you encounter any module-related issues.
+import fs from 'browserfs/dist/node/core/node_fs';
+import path from 'path';
 import { motion, AnimatePresence , useAnimation} from "framer-motion"
 import { useInView } from 'react-intersection-observer';
 import { connect } from 'react-redux'
 function projets(props) {
+  const [domaine_clicked, setdomaine_clicked] = useState(1);
+  useEffect(() => {
+
+
+console.log('domaine.....clicked',domaine_clicked)
+    // Délai de 2 secondes avant d'afficher le composant de navigation
+    }, [domaine_clicked]);
+
+    const range = (start, end) => {
+      return Array.from({ length: end - start + 1 }, (_, index) => start + index);
+    };
+
   const array_designer_project_domaine = [
     {
       fr: [
         {
           id: 1,
-          title: "Loggos",
+          title: "Logos",
           description: "Conception de logos pour les marques et les entreprises.",
-          domain: "Design graphique",
+         nombre:4,
         },
         {
           id: 2,
           title: "Infographie",
           description: "Création d'infographies visuellement attrayantes pour présenter des données.",
-          domain: "Infographie",
+         nombre:0,
         },
         {
           id: 3,
           title: "Bannières",
           description: "Conception de bannières publicitaires percutantes pour promouvoir des produits ou des événements.",
-          domain: "Design graphique",
+         nombre:0,
         },
         {
           id: 4,
           title: "Icons",
           description: "Création d'icônes personnalisées pour les applications et les interfaces utilisateur.",
-          domain: "Design graphique",
+         nombre:0,
         },
         {
           id: 5,
           title: "Couverture des livres",
           description: "Conception de couvertures de livres attrayantes et captivantes.",
-          domain: "Design graphique",
+         nombre:0,
         },
         {
           id: 6,
           title: "Les Livres KDM",
           description: "Conception et mise en page de livres KDM (Knowledge Development Maps).",
-          domain: "Design graphique",
+         nombre:0,
         },
         {
           id: 7,
           title: "Packaging",
           description: "Conception d'emballages attrayants pour les produits.",
-          domain: "Design packaging",
+         nombre:3,
         },
         {
           id: 8,
           title: "AI Design",
           description: "Utilisation de l'intelligence artificielle pour créer des designs innovants et personnalisés.",
-          domain: "Design graphique",
+         nombre:0,
         },
       ],
       eng: [
@@ -61,49 +78,49 @@ function projets(props) {
           id: 1,
           title: "Logos",
           description: "Logo design for brands and businesses.",
-          domain: "Graphic Design",
+         nombre:4,
         },
         {
           id: 2,
           title: "Infographics",
           description: "Creation of visually appealing infographics to present data.",
-          domain: "Infographics",
+         nombre:0,
         },
         {
           id: 3,
           title: "Banners",
           description: "Design of impactful advertising banners to promote products or events.",
-          domain: "Graphic Design",
+         nombre:0,
         },
         {
           id: 4,
           title: "Icons",
           description: "Creation of custom icons for applications and user interfaces.",
-          domain: "Graphic Design",
+         nombre:0,
         },
         {
           id: 5,
           title: "Book Covers",
           description: "Design of attractive and captivating book covers.",
-          domain: "Graphic Design",
+         nombre:0,
         },
         {
           id: 6,
           title: "KDM Books",
           description: "Design and layout of KDM (Knowledge Development Maps) books.",
-          domain: "Graphic Design",
+         nombre:0,
         },
         {
           id: 7,
           title: "Packaging",
           description: "Design of attractive packaging for products.",
-          domain: "Packaging Design",
+         nombre:3,
         },
         {
           id: 8,
           title: "AI Design",
           description: "Utilization of artificial intelligence to create innovative and personalized designs.",
-          domain: "Graphic Design",
+         nombre:0,
         },
       ],
     },
@@ -219,7 +236,7 @@ function projets(props) {
     },
   };
   
-  function ProjectItem({ item }) {
+  function ProjectItem({ item ,ordre}) {
     const [ref, inView] = useInView({
       triggerOnce:true,
       threshold: 0.1
@@ -234,34 +251,11 @@ function projets(props) {
       transition={{ duration:1 , delay: 0.5}}
 
       >
-        <div className='image' style={{backgroundImage:`url('/static/images/coding.jpg')`}} >
-          <h1>image</h1>
+        <div className='image' style={{backgroundImage:`url('/static/images/${item.title}/img${ordre+1}.jpg')`}} >
+      
 
         </div>
-       <div className='information'>
-        <motion.div
-          className='title'
-          key={`competence-item-${item.id}`} 
-          ref={ref}
-          style={{
-         
-          }}
-          initial={{  }}
-          animate={inView ? {  } : {}}
-          transition={{ duration: 1 , delay: 0.5 }}
-        >
-   
-            <h1>{item.name} </h1>
-        
-        </motion.div>
-      
-        <motion.div className='description'   key={item.id}
-      initial={{ opacity:0 }}
-      animate={inView ? { opacity:1  } : {}}
-      transition={{ duration:1 , delay: 0.5}}>
-          <p>{item.description}</p>
-        </motion.div>
-        </div>
+     
       </motion.div>
    
     );
@@ -290,7 +284,7 @@ function projets(props) {
         {array_designer_project_domaine[0]['fr'].map((item)=>{
 
           return(
-            <div className='domaine'>
+            <div className='domaine' onClick={()=>setdomaine_clicked(item.id)}>
               <h1>{item.title}</h1>
             </div>
           )
@@ -311,8 +305,8 @@ function projets(props) {
         </div>
         <div className='all-project'>
 
-        {projects[0][props.langue].map((item) => (
-            <ProjectItem key={item.id} item={item} />
+        {range(1,array_designer_project_domaine [0][props.langue][domaine_clicked-1].nombre).map((item,index) => (
+           <ProjectItem key={index} item={array_designer_project_domaine [0][props.langue][domaine_clicked-1]} ordre={index}/>
           ))}
 
        </div>
