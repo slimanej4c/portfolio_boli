@@ -210,14 +210,13 @@ console.log('domaine.....clicked',domaine_clicked)
       </div>
             <div className='big-title'>
   
-        <motion.h1 variants={titleVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} >
-                        {array_designer_project_domaine [0][props.langue][domaine_clicked-1].text.split("").map((letter ,index) => (
-                      <motion.span key={1} variants={letterVariants} transition={{ delay: index * 0.05 }} >{letter}</motion.span>
-                    ))}
+        <h1 >
+                        {array_designer_project_domaine [0][props.langue][domaine_clicked-1].text}
+               
                           
                           
                         
-                        </motion.h1>
+                        </h1>
 
         </div>
         <div className='all-project'>
