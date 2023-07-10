@@ -10,19 +10,19 @@ function apropos(props) {
         {
           id: 1,
           title: "À propos de moi",
-          text: "Je suis un développeur passionné avec une expertise dans les technologies de pointe. Ma spécialité se concentre principalement sur la création de sites web et d'applications en utilisant des frameworks tels que React JS, Next JS et React Native. Je suis également compétent en programmation Python, ce qui me permet de développer des applications desktop personnalisées. Avec une solide expérience dans le développement frontend et backend, je suis en mesure de concevoir des interfaces utilisateur interactives, réactives et esthétiquement attrayantes. J'ai une bonne connaissance des concepts clés tels que la gestion de l'état, les composants réutilisables et la manipulation des données. Mon objectif est de créer des solutions technologiques innovantes qui répondent aux besoins uniques de mes clients. Je suis constamment à l'affût des dernières tendances et technologies émergentes pour offrir des produits de qualité supérieure. Si vous recherchez un développeur expérimenté pour votre prochain projet de site web ou d'application, n'hésitez pas à me contacter. Je suis impatient de mettre mes compétences et mon expertise au service de votre réussite."
+          text: "Je suis un designer passionné spécialisé dans la création de logos, packaging, infographies, t-shirts et icônes. J'ai une expertise approfondie en design graphique et je suis en mesure de créer des visuels percutants et esthétiquement attrayants pour les marques et les entreprises. Mon objectif est de fournir des solutions créatives qui répondent aux besoins uniques de mes clients. Si vous êtes à la recherche d'un designer talentueux pour votre prochain projet, n'hésitez pas à me contacter. Je suis impatient de mettre mes compétences et mon expertise à votre service."
         },
       ],
       eng: [
         {
           id: 1,
-          title: "About Me       ",
-          text: "I am a passionate developer with expertise in cutting-edge technologies. My specialty primarily focuses on creating websites and applications using frameworks such as React JS, Next JS, and React Native. I am also proficient in Python programming, which allows me to develop customized desktop applications. With a strong background in frontend and backend development, I am capable of designing interactive, responsive, and aesthetically appealing user interfaces. I have a good understanding of key concepts such as state management, reusable components, and data manipulation. My goal is to create innovative technological solutions that meet the unique needs of my clients. I am constantly keeping up with the latest trends and emerging technologies to deliver top-quality products. If you are looking for an experienced developer for your next website or application project, feel free to contact me. I look forward to leveraging my skills and expertise to contribute to your success."
+          title: "About Me        ",
+          text: "I am a passionate designer specializing in the creation of logos, packaging, infographics, t-shirts, and icons. I have a deep expertise in graphic design and I am able to create impactful and visually appealing visuals for brands and businesses. My goal is to provide creative solutions that meet the unique needs of my clients. If you are looking for a talented designer for your next project, feel free to contact me. I look forward to leveraging my skills and expertise to serve you."
         },
       ],
     },
   ];
-
+  
   const titleVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -70,7 +70,7 @@ function apropos(props) {
 
          <div  className='home-left'>
             <div className='text'>
-            <motion.h1 variants={titleVariants} initial="hidden" whileInView="visible" >
+            <motion.h1 variants={titleVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}  >
                         {contenu[0][props.langue][0].title.split("").map((letter) => (
                       <motion.span key={1} variants={letterVariants}>{letter}</motion.span>
                     ))}
