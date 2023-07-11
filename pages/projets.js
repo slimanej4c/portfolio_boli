@@ -204,7 +204,7 @@ console.log('domaine.....clicked',domaine_clicked)
         {array_designer_project_domaine[0][props.langue].map((item)=>{
 
           return(
-            <div className='domaine' onClick={()=>setdomaine_clicked(item.id)}>
+            <div className={item.id===domaine_clicked ? 'domaine_clicked' : 'domaine'} onClick={()=>setdomaine_clicked(item.id)}>
               <h1>{item.name}</h1>
             </div>
           )
