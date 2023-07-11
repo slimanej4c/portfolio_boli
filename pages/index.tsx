@@ -23,14 +23,14 @@ const inter = Inter({ subsets: ['latin'] })
       fr: [
         {
           id: 1,
-          title: "Salut, je suis Elh'ouas Bourekhis, spécialisé dans le design graphique et la création de logos, emballages, infographies, t-shirts et icônes.",
+          title: "Salut, je suis Elhouas BOUREKHIS, spécialisé dans le design graphique et la création de logos, emballages, infographies, t-shirts et icônes.",
           text: "Je suis un freelance designer spécialisé dans la conception de visuels percutants pour les marques et les entreprises. Avec une expertise dans le design graphique, je suis en mesure de créer des logos uniques, des emballages attrayants, des infographies visuellement captivantes, des designs de t-shirts tendance et des icônes personnalisées pour les applications et les interfaces utilisateur.",
         },
       ],
       eng: [
         {
           id: 1,
-          title: "Hi, I'm Elh'ouas Bourekhis, specializing in graphic design and creating logos, packaging, infographics, t-shirts, and icons.                   ",
+          title: "Hi, I'm Elhouas BOUREKHIS, specializing in graphic design and creating logos, packaging, infographics, t-shirts, and icons.                   ",
           text: "I'm a freelance designer specialized in creating impactful visuals for brands and businesses. With expertise in graphic design, I can create unique logos, attractive packaging, visually captivating infographics, trendy t-shirt designs, and custom icons for applications and user interfaces.",
         },
       ],

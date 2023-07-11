@@ -38,7 +38,7 @@ console.log('domaine.....clicked',domaine_clicked)
             name: "Infographie",
             description: "Création d'infographies visuellement attrayantes pour présenter des données.",
             text: "Mes projets dans la catégorie de l'infographie",
-            nombre: 7,
+            nombre: 6,
           },
           {
             id: 3,
@@ -46,7 +46,7 @@ console.log('domaine.....clicked',domaine_clicked)
             name: "Icônes et Illustration",
             description: "Création d'icônes personnalisées pour les applications et les interfaces utilisateur.",
             text: "Mes projets dans la catégorie des icônes et de l'illustration",
-            nombre: 16,
+            nombre: 17,
           }
           ,
           {
@@ -89,7 +89,7 @@ console.log('domaine.....clicked',domaine_clicked)
             name: "Infographics",
             description: "Creation of visually appealing infographics to present data.",
             text: "My projects in the infographics category           ",
-            nombre: 7,
+            nombre: 6,
           },
           {
             id: 3,
@@ -97,7 +97,7 @@ console.log('domaine.....clicked',domaine_clicked)
             name: "Icons and Illustration",
             description: "Creation of custom icons for applications and user interfaces.",
             text: "My projects in the icons and illustration category",
-            nombre: 16,
+            nombre: 17,
           }
           ,
           {

@@ -15,7 +15,7 @@ import  { store  }  from '../Redux/store';
      
     <Head>
        
-    <title>Portfolio ELH'OUAS</title>
+    <title>Portfolio ELHOUAS</title>
     <meta name='viewport' content='width=device-width, inital-scale=1' />
     <meta name="theme-color" content="black"></meta>
   </Head>
