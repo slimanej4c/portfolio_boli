@@ -52,7 +52,7 @@ console.log('domaine.....clicked',domaine_clicked)
           {
             id: 4,
             title: "livres",
-            name: "Couverture des livres",
+            name: "livres",
             description: "Conception de couvertures de livres attrayantes et captivantes.",
             text: "Mes projets dans la catégorie des couvertures de livres",
             nombre: 34,
@@ -71,7 +71,7 @@ console.log('domaine.....clicked',domaine_clicked)
             name: "Packaging",
             description: "Conception d'emballages attrayants pour les produits.",
             text: "Mes projets dans la catégorie du packaging",
-            nombre: 18,
+            nombre: 15,
           },
         ],
         eng: [
@@ -123,7 +123,7 @@ console.log('domaine.....clicked',domaine_clicked)
             name: "Packaging",
             description: "Design of attractive packaging for products.",
             text: "My projects in the packaging category        ",
-            nombre: 18,
+            nombre: 15,
           },
         ],
       },
