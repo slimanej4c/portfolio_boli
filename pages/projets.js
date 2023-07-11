@@ -30,7 +30,7 @@ console.log('domaine.....clicked',domaine_clicked)
             name: "Logos",
             description: "Conception de logos pour les marques et les entreprises.",
             text: "Mes projets dans la catégorie des logos",
-            nombre: 4,
+            nombre: 62,
           },
           {
             id: 2,
@@ -38,31 +38,32 @@ console.log('domaine.....clicked',domaine_clicked)
             name: "Infographie",
             description: "Création d'infographies visuellement attrayantes pour présenter des données.",
             text: "Mes projets dans la catégorie de l'infographie",
-            nombre: 0,
+            nombre: 7,
           },
           {
             id: 3,
             title: "Icons",
-            name: "Icônes",
+            name: "Icônes et Illustration",
             description: "Création d'icônes personnalisées pour les applications et les interfaces utilisateur.",
-            text: "Mes projets dans la catégorie des icônes",
-            nombre: 0,
-          },
+            text: "Mes projets dans la catégorie des icônes et de l'illustration",
+            nombre: 16,
+          }
+          ,
           {
             id: 4,
-            title: "Couverture des livres",
+            title: "livres",
             name: "Couverture des livres",
             description: "Conception de couvertures de livres attrayantes et captivantes.",
             text: "Mes projets dans la catégorie des couvertures de livres",
-            nombre: 0,
+            nombre: 34,
           },
           {
             id: 5,
-            title: "Les Livres KDP",
-            name: "Les Livres KDP",
-            description: "Conception et mise en page de livres KDP.",
-            text: "Mes projets dans la catégorie des livres KDP",
-            nombre: 0,
+            title: "T-shirt",
+            name: "T-shirt",
+            description: "Conception de designs pour des t-shirts.",
+            text: "Mes projets dans la catégorie du design de t-shirts",
+            nombre: 18,
           },
           {
             id: 6,
@@ -70,7 +71,7 @@ console.log('domaine.....clicked',domaine_clicked)
             name: "Packaging",
             description: "Conception d'emballages attrayants pour les produits.",
             text: "Mes projets dans la catégorie du packaging",
-            nombre: 3,
+            nombre: 18,
           },
         ],
         eng: [
@@ -80,7 +81,7 @@ console.log('domaine.....clicked',domaine_clicked)
             name: "Logos",
             description: "Logo design for brands and businesses.",
             text: "My projects in the logos category          ",
-            nombre: 4,
+            nombre: 62,
           },
           {
             id: 2,
@@ -88,39 +89,41 @@ console.log('domaine.....clicked',domaine_clicked)
             name: "Infographics",
             description: "Creation of visually appealing infographics to present data.",
             text: "My projects in the infographics category           ",
-            nombre: 0,
+            nombre: 7,
           },
           {
             id: 3,
             title: "Icons",
-            name: "Icons",
+            name: "Icons and Illustration",
             description: "Creation of custom icons for applications and user interfaces.",
-            text: "My projects in the icons category               ",
-            nombre: 0,
-          },
+            text: "My projects in the icons and illustration category",
+            nombre: 16,
+          }
+          ,
           {
             id: 4,
-            title: "Couverture des livres",
-            name: "Book Covers",
+            title: "livres",
+            name: "Books",
             description: "Design of attractive and captivating book covers.",
             text: "My projects in the book covers category        ",
-            nombre: 0,
+            nombre: 34,
           },
-          {
-            id: 5,
-            title: "Les Livres KDP",
-            name: "KDP Books",
-            description: "Design and layout of KDP books.",
-            text: "My projects in the KDP books category          ",
-            nombre: 0,
-          },
+          
+      {
+        id: 5,
+        title: "T-shirt",
+        name: "T-shirt",
+        description: "Design of t-shirt designs.",
+        text: "My projects in the t-shirt design category",
+        nombre: 18,
+      },
           {
             id: 6,
             title: "Packaging",
             name: "Packaging",
             description: "Design of attractive packaging for products.",
             text: "My projects in the packaging category        ",
-            nombre: 3,
+            nombre: 18,
           },
         ],
       },
@@ -168,7 +171,7 @@ console.log('domaine.....clicked',domaine_clicked)
       transition={{ duration:1 , delay: 0.5}}
 
       >
-        <div className='image' style={{backgroundImage:`url('/static/images/${item.title}/img${ordre+1}.jpg')`}} >
+        <div className='image' style={{backgroundImage:`url('/static/images/${item.title}/img (${ordre+1}).jpg')`}} >
       
 
         </div>
