@@ -92,7 +92,7 @@ function apropos(props) {
 
          <div className='home-right'>
 
-            <motion.div className='image' style={{backgroundImage:`url('/static/images/profile.jpg')`}}  
+            <motion.div className='image' style={{backgroundImage:`url('/static/images/profile.jpeg')`}}  
               initial="initial"
               animate="animate"
               variants={rotateVariants}>
