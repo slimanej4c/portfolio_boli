@@ -19,9 +19,9 @@ import  { store  }  from '../Redux/store';
     <meta name='viewport' content='width=device-width, inital-scale=1' />
     <meta name="theme-color" content="black"></meta>
   </Head>
-
+  <div style={{ backgroundColor: "red" }}>
   <Component {...pageProps} />
-  
+  </div>
   </>
   </Provider>
   )

@@ -1,9 +1,13 @@
+body {
+    background-color: var(--home_bg);
+  }
 .home{
 
     width: 100%;
     height: 700px;
     position: relative;
     overflow: hidden;
+    background-color: var(--home_bg);
 }
 .aprops{
 
