@@ -30,7 +30,7 @@ console.log('domaine.....clicked',domaine_clicked)
             name: "Logos",
             description: "Conception de logos pour les marques et les entreprises.",
             text: "Mes projets dans la catégorie des logos",
-            nombre: 62,
+            nombre: 89,
           },
           {
             id: 2,
@@ -71,7 +71,7 @@ console.log('domaine.....clicked',domaine_clicked)
             name: "Packaging",
             description: "Conception d'emballages attrayants pour les produits.",
             text: "Mes projets dans la catégorie du packaging",
-            nombre: 15,
+            nombre: 18,
           },
         ],
         eng: [
@@ -81,7 +81,7 @@ console.log('domaine.....clicked',domaine_clicked)
             name: "Logos",
             description: "Logo design for brands and businesses.",
             text: "My projects in the logos category          ",
-            nombre: 62,
+            nombre: 89,
           },
           {
             id: 2,
@@ -123,7 +123,7 @@ console.log('domaine.....clicked',domaine_clicked)
             name: "Packaging",
             description: "Design of attractive packaging for products.",
             text: "My projects in the packaging category        ",
-            nombre: 15,
+            nombre: 18,
           },
         ],
       },
