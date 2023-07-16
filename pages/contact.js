@@ -61,7 +61,7 @@ export const contact = (props) => {
                       <ul>
                   
                     <li> <FontAwesomeIcon icon={faLocationDot}  className="contact-icon"/> ALGERIA</li>
-                    <li> <FontAwesomeIcon icon={faPhone}  className="contact-icon"/> +213 664 59 55 64</li>
+                    <li> <FontAwesomeIcon icon={faPhone}  className="contact-icon"/>  (438)4832653 </li>
                     <li> <FontAwesomeIcon icon={faEnvelope}  className="contact-icon"/> ragnr1492@gmail.com</li>
          
                     <a href="https://www.facebook.com/votreprofilfacebook" target="_blank" rel="noopener noreferrer"> 
